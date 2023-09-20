@@ -1,0 +1,101 @@
+% !TEX program = lualatex
+
+\documentclass[
+    main=brazil,
+    latin,
+    % printstyle,
+    notocindent,
+    authoryearref,
+    % numericref,
+]{TCC_class}
+
+% ABNT NBR 14724, 6027, 6034, 10520, 6023
+
+% =========================================================
+% Preâmbulo
+% =========================================================
+
+\usepackage{lipsum}
+% \usepackage[grid,subgridcolor=red]{eso-pic}
+
+% Carrega dados de título, autor, banca...
+\input{PreText/metadata.tex}
+
+% Carrega configurações de abreveaturas e símbolos
+\input{PreText/glossary.tex}
+
+% Carrega pacotes adicionais
+\input{addpackages.tex}
+
+% Carrega bibliografias
+\addbibresource{Bibliography/bibliography.bib}
+
+% =========================================================
+% Documento
+% =========================================================
+\begin{document}
+
+% Limpa cabeçalho e rodapé (número de página) para páginas pré-textuais
+\pagestyle{empty}
+
+% Constrói páginas de CAPA, FOLHA DE ROSTO e BANCA EXAMINADORA
+\coverpage
+\titlepage
+\examiningboard
+
+% Carrega DEDICATÓRIA, AGRADECIMENTOS e EPÍGRAFE
+\input{PreText/pretext.tex}
+
+% Constrói LISTA DE ABREVEATURAS
+\printnoidxglossary[
+    type=acronym,% acronyms glossary
+    sort=word
+]
+\clearpage{\thispagestyle{empty}\cleardoublepage}
+
+% Constrói LISTA DE SÍMBOLOS
+\printnoidxglossary[
+    type=symbols,% symbols glossary
+    sort=word
+]
+\clearpage{\thispagestyle{empty}\cleardoublepage}
+
+% Constrói LISTA DE FIGURAS
+\listoffigures
+\clearpage{\thispagestyle{empty}\cleardoublepage}
+
+% Constrói LISTA DE TABELAS
+\listoftables
+\clearpage{\thispagestyle{empty}\cleardoublepage}
+
+% Constrói LISTA DE PROGRAMAS
+\lstlistoflistings
+\clearpage{\thispagestyle{empty}\cleardoublepage}
+
+% Constrói SUMÁRIO
+\tableofcontents
+\clearpage{\thispagestyle{empty}\cleardoublepage}
+
+% Redefine cabeçalho e rodapé (número de página), e espaçamento do testo
+\pagestyle{TCC_standard}
+\textspacing
+
+% =========================================================
+
+\input{Text/Cap_1/cap_1.tex}
+
+\input{Text/Cap_2/cap_2.tex}
+
+% =========================================================
+
+% Constrói REFERÊNCIA BIBLIOGRÁFICAS
+\clearpage{\cleardoublepage}
+\printbibliography
+
+% Carrega APÊNDICES e ANEXOS
+\input{PostText/appendices.tex}
+\input{PostText/annexes.tex}
+
+% =========================================================
+
+\end{document}

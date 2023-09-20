@@ -1,0 +1,120 @@
+% =========================================================
+% Título e subtítulo
+% =========================================================
+
+\title{Título do Trabalho}
+\subtitle{Subtítulo do Trabalho}
+
+\titleenglish{Title in English}
+\subtitleenglish{Subtitle in English}
+
+% =========================================================
+% Autor
+% =========================================================
+
+\author{Autor Nome Autor}
+
+% =========================================================
+% Lista de Orientador e coorientadores
+% =========================================================
+
+\setsepchar{;/,}
+\ignoreemptyitems
+\readlist*\orientador{%
+    % Função , Título , Nome Completo , Instituição ;
+    Orientador , Prof. Dr. , Nome Segundo Nome , Instituição ;
+    Coorientador , Prof. Dr. , Nome Segundo Nome , Instituição ;
+}
+
+% =========================================================
+% Lista de membros da banca
+% =========================================================
+
+\setsepchar{;/,}
+\ignoreemptyitems
+\readlist*\banca{%
+    % Título , Nome Completo , Instituição ;
+    Prof. Dr. , Nome Segundo Nome , Instituição ;
+    Eng. , Nome Segundo Nome , Instituição ;
+}
+
+% =========================================================
+% Cidade e Data
+% =========================================================
+
+\setsepchar{,}
+\ignoreemptyitems
+\readlist*\cidade{%
+    % Cidade , Estado
+    Foz do Iguaçu , PR
+}
+
+\setsepchar{,}
+\ignoreemptyitems
+\readlist*\data{%
+    % Dia , Mês , Ano
+    28 , fevereiro , 2023
+}
+
+% =========================================================
+% Universidade
+% =========================================================
+
+\setsepchar{,}
+\ignoreemptyitems
+\readlist*\universidade{%
+    % Universidade , Centro , Campus , Curso
+    Universidade Estadual do Oeste do Paraná ,
+    Centro de Engenharias e Ciências Exatas ,
+    Campus de Foz do Iguaçu ,
+    Curso de Engenharia Elétrica
+}
+
+\setsepchar{,}
+\ignoreemptyitems
+\readlist*\universidadeenglish{%
+    % Universidade , Centro , Campus , Curso
+    State University of Western Paraná ,
+    Engineering and Exact Sciences Center ,
+    Foz do Iguaçu Campus ,
+    Electrical Engineering Course
+}
+
+% =========================================================
+% Descrições
+% =========================================================
+
+\trabalho{Trabalho de Conclusão de Curso}
+\trabalhoenglish{Undergradute Thesis}
+
+\descricao{%
+    \trabalho\ apresentado ao \universidade[4] da \universidade[1],
+    como  parte  dos  requisitos  para  a  obtenção  do título de
+    Engenheiro Eletricista.
+}
+
+\descricaobanca{%
+    \trabalho\ aprovado como requesito para obtenção do grau de
+    Engenheiro Eletricista da \universidade[1], pela seguinta banca
+    examinadora:
+}
+
+\descricaoresumo{%
+    \author\ (\data[3]).
+    \ifdefempty{\subtitle}{%
+        \MakeUppercase{\textbf{\title}}
+    }{%
+        \MakeUppercase{\textbf{\title:\space\subtitle}}
+    }
+    \trabalho\ (Graduação) - \universidade[4], \universidade[1] - UNIOESTE, \cidade[1], \data[3].
+}
+
+\descricaoabstract{%
+    \author\ (\data[3]).
+    \ifdefempty{\subtitleenglish}{%
+        \MakeUppercase{\textbf{\titleenglish}}
+    }{%
+        \MakeUppercase{\textbf{\titleenglish:\space\subtitleenglish}}
+    }
+    \trabalhoenglish\ - \universidadeenglish[4], \universidadeenglish[1] - UNIOESTE, \cidade[1], \data[3].
+}

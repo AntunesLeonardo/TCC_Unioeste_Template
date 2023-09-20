@@ -1,0 +1,119 @@
+% =========================================================
+% Inclusão e configuração de pacotes extras
+% =========================================================
+
+
+% siunitx =================================================
+
+\usepackage{siunitx}
+
+\sisetup{
+    number-mode=match,
+    unit-mode=text,
+    parse-numbers=true,
+    % round-mode=places, round-precision=4,
+    % round-zero-positive=false,
+    % retain-explicit-plus=true,
+    % retain-negative-zero=true,
+    retain-zero-uncertainty=true,
+    exponent-mode=input,
+    output-decimal-marker=\text{,},
+    exponent-product={\cdot},
+    uncertainty-mode=separate,
+    per-mode=symbol,
+    sticky-per,
+    group-digits=integer,
+    group-minimum-digits=5,
+    group-separator={\,},
+    list-separator={; },
+    list-final-separator={; e },% Language sensitive
+    list-pair-separator={ e },% Language sensitive
+    list-units=repeat,
+    product-mode=symbol,
+    product-symbol={\cdot},
+    product-units=repeat,
+    range-phrase={ a },% language sensitive
+    range-units=repeat,
+    %output-complex-root={\imath},% <-- Complex as 'i'
+    output-complex-root={\jmath},% <-- Complex as 'j'
+    complex-root-position=before-number,
+    angle-mode=decimal,
+    quantity-product={\ },
+    tight-spacing=true,
+}
+
+% xcolor ==================================================
+
+\usepackage[
+    luatex,
+    rgb,
+    % cmyk,
+    % gray,
+    table,
+]{xcolor}
+
+\definecolor{codebackcolor}{HTML}{F8F8F8}
+
+% listings ================================================
+
+\usepackage{listings}
+
+\lstset{
+    % backgroundcolor=\color{codebackcolor},
+    basicstyle=\ttfamily\small,
+    numbers=none,
+    % numberstyle=\ttfamily\small,
+    % numbersep={10pt},
+    breakatwhitespace=false,
+    breaklines=true,
+    keepspaces=true,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    captionpos=b,
+    abovecaptionskip={6pt},
+    belowcaptionskip={6pt},
+}
+
+% Changes caption and list of listings names (language senbsitive)
+\renewcommand{\lstlistingname}{Programa}
+\renewcommand{\lstlistlistingname}{Lista de Programas}
+
+% Defines the apperancer of list of listings
+\makeatletter
+\AtBeginDocument{%
+\renewcommand\lstlistoflistings{\bgroup
+  \let\contentsname\lstlistlistingname
+  \def\l@lstlisting##1##2{\@dottedtocline{1}{0em}{3em}{##1}{##2}}
+  \let\lst@temp\@starttoc \def\@starttoc##1{\lst@temp{lol}}%
+  \tableofcontents \egroup}
+}
+\makeatother
+
+% svg =====================================================
+
+\usepackage{svg}
+
+% tabularx ================================================
+
+\usepackage{tabularx}
+
+\renewcommand{\arraystretch}{1.0}
+\renewcommand{\tabularxcolumn}[1]{>{\small}m{#1}}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+% multirow ================================================
+
+% \usepackage{multirow}
+
+% pdflscape ===============================================
+
+% \usepackage[luatex]{pdflscape}
+
+% pdfpages ================================================
+
+% \usepackage{pdfpages}
