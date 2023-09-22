@@ -470,7 +470,7 @@
 }
 
 \hypersetup{%
-    addtopdfcreator={Template de TCC (LuaLaTeX) desenvolvido por Leonardo A. Antunes}
+    addtopdfcreator={Template de TCC desenvolvido por Leonardo A. Antunes}
 }
 
 % Glossries ===============================================
