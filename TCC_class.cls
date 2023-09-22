@@ -1,3 +1,58 @@
+% =========================================================
+% Arquivo de Classe - modificar apenas para mudanças estruturais
+%
+% ---> Você (provavelmente) não precisa mexer aqui <---
+%
+% Definição da classe 'TCC_class' para a formatação de Trabalhos
+% de Conclusão de Curso do curso de Engenharia Elétrica da
+% Unioeste (Foz do Iguaçu).
+% Nesta classe são definidos e configurados alguns pacotes para
+% o funcionamento do template do qual ela faz parte, além dos
+% elementos estruturais (capa, folha de rosto, folha de banca)
+% utilizados.
+% Também são definidas algumas macros para armazenar metadados
+% do trabalho escrito e utilizar na construção dos elementos
+% estruturais.
+%
+% Os elementos estruturais e formatação fornecidos nesta classe
+% seguem as normas denifidas no 'MANUAL PARA ELABORAÇÃO DE 
+% TRABALHOS CIENTÍFICOS DO CURSO DE ENGENHARIA ELÉTRICA' (2020),
+% Além de outras normas técnicas da ABNT que tratam do tema:
+% NBR 6023, NBR 14724, NBR 6027, NBR 6034, e NBR 10520.
+%
+% =========================================================
+% A classe fornece 4 opções nativas que podem ser indicas quando
+% for carregada:
+% - 'printstyle': Deve ser utilizada para gerar versão para
+%   impressão do trabalho. Ajusta margens para folhas pares e
+%   ímpares e respeita iniciação de elementos em folhas ímpares.
+%
+% - 'notocindent': Estilização de elementos como sumário, lista
+%   de figuras, lista de tabelas, ..., sobre identação (recomendado).
+%
+% - 'authoryearref': Define o sistema autor-data como padrão para
+%   referências e citações (padrão).
+%
+% - 'numericref': Define o sistema numérico como padrão para
+%   referências e citações. Não deve ser utilizado, exceto se
+%   o modelo de TCC da Unioeste sofrer modificações que mermitam
+%   o uso.
+%
+%   Outras opções são passadas ao pacote 'babel' e podem ser
+%   utilizadas para definir os idiomas utilizados.
+%
+% =========================================================
+% A elaboração desta classe, bem como de todo este template,
+% é trabalho voluntário do graduando de Engenharia Elétrica:
+% 
+% Leonardo Augusto Antunes.
+%
+% Faz-se menção honrosa ao Prof. Dr. Romeu Reginatto que
+% desenvolveu anteriormente um template com mesma finalizade,
+% e aos vários graduandos que colaboraram modificando o template
+% ao longo dos últimos anos.
+% =========================================================
+
 \LoadClass{book}
 
 \RequirePackage{iftex}
@@ -415,7 +470,7 @@
 }
 
 \hypersetup{%
-    addtopdfcreator={Template de TCC desenvolvido por Leonardo A. Antunes}
+    addtopdfcreator={Template de TCC (LuaLaTeX) desenvolvido por Leonardo A. Antunes}
 }
 
 % Glossries ===============================================
@@ -602,7 +657,12 @@
     \hfill\break\bigskip
     \begin{flushleft}
         % Title (language sensitive)
-        \MakeUppercase{\textbf{Título:}}\space\title\break
+        \MakeUppercase{\textbf{Título:}}
+        \ifdefempty{\subtitle}{%
+            \space\title\break
+        }{%
+        \space\title:\space\subtitle\break
+        }
         % Author (language sensitive)
         \vspace{3mm}\break
         \MakeUppercase{\textbf{Autor:}}\space\author\break
@@ -672,4 +732,4 @@
 \hfuzz=2.50pt
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{TCC_class}[2023/05/23 Work In Progress]
+\ProvidesClass{TCC_class}[2023/09/21 - v1.1]
