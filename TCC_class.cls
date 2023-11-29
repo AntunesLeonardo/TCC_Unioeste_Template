@@ -116,7 +116,7 @@
 
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{Times New Roman}
-\setmonofont{Courier New}
+\setmonofont{Latin Modern Mono Prop Light}
 
 \renewcommand{\small}{\fontsize{10}{12}\selectfont}
 \renewcommand{\normalsize}{\fontsize{12}{14}\selectfont}
